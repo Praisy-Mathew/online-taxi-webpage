@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #0f056e;
+            color: white;
+            padding: 15px 40px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            border: 2px solid #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        header nav a:hover {
+            background-color: #0056b3;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 80px auto 100px;
+            padding: 20px;
+        }
+
+        .booking-form {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 50px;
+            background-color: #f9f9f9;
+        }
+
+        .booking-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .booking-form input, .booking-form select, .booking-form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .booking-form button {
+            background-color: #4400ff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .booking-form button:hover {
+            background-color: #4400ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>Booking Page</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="profile.html">Profile</a>
+                <a href="index.html">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="content">
+        <div class="booking-form">
+            <h2>Make a Booking</h2>
+            <form id="bookingForm">
+                <label for="date">Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <label for="pickupLocation">Pickup Location:</label>
+                <input type="text" id="pickupLocation" name="pickupLocation" required>
+                
+                <label for="dropoffLocation">Drop-off Location:</label>
+                <input type="text" id="dropoffLocation" name="dropoffLocation" required>
+
+                <button type="submit">Book Now</button>
+            </form>
+            <script>
+                document.getElementById("bookingForm").addEventListener("submit", function(event) {
+                    event.preventDefault();
+                    // Normally, you'd process the booking here and redirect to the success page if successful
+                    window.location.href = "booking-success.html"; // Redirect to booking success page
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>
+
